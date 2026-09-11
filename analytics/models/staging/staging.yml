@@ -30,8 +30,14 @@ models:
         description: Raw relative posted time ('10 hours ago'), kept unparsed - search_date carries the time axis; parsing it is a supporter exercise.
       - name: job_salary
         description: Raw salary text, unparsed for now.
-      - name: job_extensions_raw
-        description: Raw extensions JSON - the benefits flags live in here, unparsed for now.
+      - name: has_health_insurance
+        description: Posting lists Health insurance among its extensions.
+      - name: has_dental_insurance
+        description: Posting lists Dental insurance among its extensions.
+      - name: has_paid_time_off
+        description: Posting lists Paid time off among its extensions.
+      - name: has_no_degree_mentioned
+        description: Posting lists No degree mentioned among its extensions.
 
   - name: stg_job_skills
     description: >
