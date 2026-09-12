@@ -35,7 +35,7 @@ cleaned AS (
         ARRAY_CONTAINS(
             job_extensions,
             "{{keyword}}"
-        ) AS has_{{keyword | lower | replace(' ', '_')}}
+        ) AS has_{{ slugify(keyword) }}
         {{- "," if not loop.last}}
         {% endfor %}
     FROM parsed
