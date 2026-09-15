@@ -8,6 +8,10 @@ models:
         description: The scrapers posting id.
       - name: search_term
         description: The role the scraper searched for; three values by construction.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Data Engineer', 'Data Analyst', 'Data Scientist']
       - name: search_date
         description: Scrape day.
       - name: searched_at
@@ -24,6 +28,12 @@ models:
         description: Posting platform (job_via with the 'via ' scraper artifact stripped, ~6.3k rows).
       - name: job_schedule_type
         description: As scraped; 12,252 nulls stay null - documented, not fixed.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Part-time', 'Full-time', 'Contractor', 'Internship']
+              config:
+                severity: warn
       - name: job_work_from_home
         description: True when the posting is flagged remote.
       - name: job_posted_at
@@ -32,8 +42,12 @@ models:
         description: Raw salary text, unparsed for now.
       - name: salary_min
         description: Lower bound parsed from the salary text; the single value when no range is given.
+        data_tests:
+          - non_negative
       - name: salary_max
         description: Upper bound parsed from the salary text; the single value when no range is given.
+        data_tests:
+          - non_negative
       - name: salary_avg
         description: >
           THE standard salary measure: midpoint of the parsed range (a single value is its
