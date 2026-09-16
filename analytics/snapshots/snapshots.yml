@@ -1,0 +1,23 @@
+snapshots:
+  - name: job_postings_snapshot
+    relation: ref('stg_job_postings_current')
+    description:  "A snapshot recording daily changes to our job postings"
+    config:
+      schema: snapshots
+      strategy: check
+      unique_key: job_id
+      check_cols:
+        - job_title
+        - company_name
+        - job_location
+        - job_schedule_type
+        - job_work_from_home
+        - salary_min
+        - salary_max
+        - salary_period
+        - salary_currency
+        - has_health_insurance
+        - has_dental_insurance
+        - has_paid_time_off
+        - has_no_degree_mentioned
+      updated_at: searched_at
