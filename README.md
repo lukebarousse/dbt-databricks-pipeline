@@ -70,7 +70,7 @@ The marts keep each job's **latest** scrape — the snapshot table keeps **every
 
 Structure, tests, and column descriptions were written along the way — the docs site is a rendering of work already done:
 
-**→ [lukebarousse.github.io/dbt-databricks-pipeline]()**
+**→ [lukebarousse.github.io/dbt-databricks-pipeline](https://lukebarousse.github.io/dbt-databricks-pipeline/)**
 
 The site shows:
 
